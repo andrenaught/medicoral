@@ -1,0 +1,60 @@
+/* --- COLORS --- */
+$mainColor: #fab1b1;
+$mainColor75: #fbc4c4;
+$mainColor50: #fcd8d8;
+$mainColor25: #feebeb;
+$inputColor: #5c8ec1;
+$inputColor75: #708ba7;
+$inputColor50: #a0b2c4;
+$inputColor25: #cfd9e2;
+$mainColor_dark: #dc7c7c;
+$mainColor_light: #ffd5d5;
+$fadedColor: #5e5e5e;
+$labelColor: $fadedColor;
+$inactiveColor: #aaa;
+$linkColor: #1778c1;
+$textColor: #222;
+$inputBorderColor: #a9a9a9;
+$btnHoverColor: #000;
+$btnHoverBorderColor: #888;
+$dangerColor: #d05050;
+$dangerBtnColor: #9c6de4;
+$dangerBtnColor_dark: #864ddc;
+
+/* --- TYPOGRAPHY --- */
+$fontSmall: 12px;
+
+/* --- SPACING --- */
+$appSideMenu: 55px;
+$containerWidth: 1240px;
+$containerWidthSmall: 450px;
+$containerWidthMed: 700px;
+
+/* --- MISC --- */
+$boxShadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+$mediaBreak1: 600px;
+
+@mixin font-mono-g {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+@mixin truncate-g {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin header-g {
+	font-weight: bold;
+}
+
+:root {
+	--orange-color: #f3ae0d;
+	--green-color: #67ae8c;
+	--input-color: #{$inputColor};
+	--input-color-75: #{$inputColor75};
+	--input-color-50: #{$inputColor50};
+	--input-color-25: #{$inputColor25};
+	--input-border-color: #{$inputBorderColor};
+}

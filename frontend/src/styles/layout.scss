@@ -1,0 +1,64 @@
+// Overall app layout
+.app-container.with-sidebar {
+	display: grid;
+	grid-template-columns: $appSideMenu calc(100% - #{$appSideMenu});
+	grid-template-areas: 'sidemenu body';
+}
+
+.app-body {
+	grid-area: body;
+	box-sizing: border-box;
+	width: $containerWidth;
+	max-width: 100%;
+	min-height: 100vh;
+	margin: 0px auto;
+	padding: 20px;
+
+	@media screen and (max-width: $mediaBreak1) {
+		padding: 10px;
+	}
+}
+
+.app-sidemenu {
+	width: $appSideMenu;
+	grid-area: sidemenu;
+	background: #fff;
+	z-index: 50;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	height: 100%;
+	justify-content: space-between;
+	box-shadow: $boxShadow;
+
+	> .app-sidemenu-header {
+		display: flex;
+		justify-content: center;
+		padding-top: 10px;
+	}
+	> .app-sidemenu-main {
+		margin: 15px 0px;
+		height: 300px;
+	}
+}
+.app-sidemenu-item {
+	display: flex;
+	a {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		border-right: 3px solid rgba(0, 0, 0, 0);
+		border-left: 3px solid rgba(0, 0, 0, 0);
+		font-size: 24px;
+		&.active {
+			cursor: auto;
+			border-left: 3px solid $mainColor;
+			color: $mainColor;
+		}
+		&:hover:not(.active) {
+			color: $mainColor;
+		}
+	}
+}

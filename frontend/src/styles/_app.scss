@@ -1,0 +1,128 @@
+// Core CSS - manages global css
+// To help avoid collisions and make naming easier, "-g" appended or "app-" prepended for global css classes
+// - ex: .card-g.btn for buttons specific to cards & .btn-g for regular buttons
+@import './_variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+// External
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'react-phone-number-input/style.css';
+
+body {
+	margin: 0;
+	background: #f6f6f7;
+	color: $textColor;
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	@include font-mono-g;
+}
+
+.font-mono-g {
+	@include font-mono-g;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+h1 {
+	font-size: 1.65rem;
+	&.header-g {
+		margin-bottom: 14px;
+	}
+}
+h2 {
+	font-size: 1.4rem;
+	&.header-g {
+		margin-bottom: 10px;
+	}
+}
+h3 {
+	font-size: 1.25rem;
+	&.header-g {
+		margin-bottom: 6px;
+	}
+}
+h4 {
+	font-size: 1.15rem;
+	&.header-g {
+		margin-bottom: 3px;
+	}
+}
+
+p {
+	margin-top: 0px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: inline-flex;
+	text-decoration: none;
+	color: inherit;
+}
+
+input {
+	display: block;
+	outline: 0;
+	color: inherit;
+	font-family: inherit;
+	@media screen and (max-width: $mediaBreak1) {
+		font-size: 16px; // prevent zoom in on safari
+	}
+}
+
+button {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	outline: 0;
+	cursor: pointer;
+	font-size: inherit;
+	letter-spacing: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	background: inherit;
+	color: inherit;
+	line-height: inherit;
+	max-width: 100%;
+
+	&:disabled {
+		cursor: auto;
+	}
+}
+
+.link-g {
+	color: $linkColor;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.faded-g {
+	color: $fadedColor;
+}
+
+.container-g {
+	width: $containerWidth;
+	&.small {
+		width: $containerWidthSmall;
+	}
+}
+
+@import './layout.scss';
+@import './content_ui.scss';
+@import './functional_ui.scss';

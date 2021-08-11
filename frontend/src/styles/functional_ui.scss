@@ -1,0 +1,396 @@
+// Functional UI
+.input-g,
+.react-select__control {
+	display: flex;
+	margin-bottom: 15px;
+	margin-right: 0px;
+	letter-spacing: 1px;
+	padding: 6px 10px;
+	font-family: inherit;
+	font-size: inherit;
+	min-width: 0;
+	box-sizing: border-box;
+	outline: 0;
+	border-radius: 3px !important;
+	border: 1px solid $inputBorderColor;
+	transition-duration: 0.1s;
+	color: inherit;
+	&::placeholder {
+		color: #9b9b9b;
+	}
+	&:hover,
+	&:focus,
+	&.PhoneInput.PhoneInput--focus {
+		border: 1px solid $inputColor;
+	}
+	&:focus,
+	&.PhoneInput.PhoneInput--focus {
+		box-shadow: inset 0px 0px 0px 1px $inputColor;
+	}
+	&:disabled {
+		background: #eee;
+		border: 1px solid #ddd;
+	}
+	&.invalid {
+		border: 1px solid $dangerColor;
+	}
+	@media screen and (max-width: $mediaBreak1) {
+		font-size: 16px; // prevent zoom in from safari
+	}
+}
+.input-g.small {
+	font-size: 14px;
+	padding: 7px;
+	@media screen and (max-width: $mediaBreak1) {
+		font-size: 16px; // prevent zoom in from safari
+	}
+}
+.input-g.no-marg {
+	margin: 0;
+}
+.input-g.small-marg {
+	margin-bottom: 5px;
+}
+.input-g:not(.with-arrows) {
+	/* Chrome, Safari, Edge, Opera */
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+textarea.input-g {
+	font-size: 14px;
+	height: 100px;
+	width: 100%;
+	min-width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	@media screen and (max-width: $mediaBreak1) {
+		font-size: 16px;
+	}
+}
+select.input-g {
+	padding-right: 30px;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg stroke='rgb(80, 80, 80)' fill='none' stroke-width='2' viewBox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+	background-repeat: no-repeat, repeat;
+	background-position: right 0.4em top 55%, 0 0;
+	background-size: 1.25em auto, 100%;
+
+	&:hover:not(:disabled) {
+		border-color: $inputBorderColor;
+		box-shadow: none;
+		background-color: #f6f6f7;
+	}
+	&:focus {
+		box-shadow: none;
+		border-color: $inputBorderColor;
+	}
+
+	&:after {
+		position: absolute;
+		padding-right: 50px;
+	}
+}
+.input-g.blank {
+	border: 0px;
+	padding: 0px;
+	display: block;
+	max-width: 100%;
+}
+.input-wrap-g {
+	margin-bottom: 15px;
+	.input-g,
+	.react-select__control {
+		margin-bottom: 0px;
+	}
+	.input-message {
+		color: $dangerColor;
+	}
+}
+.input-g.react-select {
+	.option-sub-label {
+		opacity: 0.8;
+		font-size: 0.75em;
+	}
+}
+.react-select__control {
+	max-width: 100%;
+	min-height: 0px !important;
+	border: 1px solid $inputBorderColor !important;
+	&:hover,
+	&:focus {
+		border: 1px solid $inputColor !important;
+	}
+	&.react-select__control--is-focused {
+		border: 1px solid $inputColor !important;
+		box-shadow: inset 0px 0px 0px 1px $inputColor;
+	}
+
+	.react-select__value-container {
+		margin-right: 9px;
+		.hide-on-select {
+			display: none;
+		}
+	}
+
+	.react-select__indicator {
+		padding: 0px;
+		height: 17px;
+		justify-content: flex-end;
+		align-items: center;
+		svg {
+			height: 100%;
+			width: auto;
+			color: #666;
+		}
+	}
+	.react-select__indicator-separator {
+		margin-right: 9px;
+		margin-left: 9px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		height: 100%;
+		align-self: center;
+	}
+	.react-select__clear-indicator {
+		display: none;
+	}
+	.react-select__value-container {
+		padding: 0px;
+		> * {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+}
+.react-select__menu {
+	.react-select__create-new {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		line-height: 1;
+		> .icon {
+			margin-right: 7px;
+		}
+	}
+}
+.input-g.react-select.is-multi {
+	.react-select__control {
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+	.react-select__value-container {
+		grid-gap: 4px;
+	}
+	.react-select__indicators {
+		padding: 2px 0px;
+	}
+	.react-select__multi-value__label {
+		padding-top: 2px;
+		padding-bottom: 2px;
+	}
+	@media screen and (max-width: $mediaBreak1) {
+		.react-select__control {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+}
+
+.input-g.PhoneInput {
+	padding: 1px 10px 1px 10px;
+	.PhoneInputCountry {
+		margin-right: 0px;
+	}
+	.PhoneInputCountryIcon {
+		margin-right: 10px;
+	}
+	.PhoneInputCountrySelectArrow {
+		margin-left: 0px;
+		display: none;
+	}
+	.PhoneInputInput {
+		font-size: inherit;
+		padding: 5px 0px;
+		border: 0;
+		padding-left: 9px;
+		border-left: 1px solid #ccc;
+	}
+}
+
+.radio-group-g {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin: 5px 0px;
+	> .radio-item {
+		display: flex;
+		input[type='radio'] {
+			cursor: pointer;
+			margin: 0px 6px 3px 0px;
+		}
+		input[type='radio'] + label {
+			cursor: pointer;
+		}
+		margin-left: 8px;
+	}
+	> .radio-item:first-child {
+		margin-left: 0px;
+	}
+}
+
+.form-g {
+	width: 300px;
+	max-width: 100%;
+	.input-g,
+	.react-datepicker-wrapper {
+		width: 100%;
+	}
+	select.input-g {
+		max-width: 100%;
+	}
+	label,
+	.input-label {
+		margin-bottom: 4px;
+	}
+	&.short-input-labels {
+		.input-label span {
+			display: none;
+		}
+	}
+	.col-2 {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 1fr 1fr;
+		> * {
+			min-width: 0;
+		}
+		.input-g {
+			width: 100%;
+		}
+	}
+	.footer-btns {
+		display: flex;
+		justify-content: flex-end;
+		> * {
+			margin-right: 10px;
+		}
+		> *:last-child {
+			margin-right: 0px;
+		}
+	}
+	&.large {
+		width: $containerWidthSmall;
+	}
+
+	@media screen and (max-width: $mediaBreak1) {
+		.col-2 {
+			grid-template-columns: 1fr;
+			grid-gap: 0px;
+		}
+	}
+}
+
+.btn-g {
+	background: #fff;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	color: #444;
+	font-weight: bold;
+	border-radius: 4px;
+	border: 1px solid #aaa;
+	padding: 6px 10px;
+	transition-duration: 0.1s;
+	.icon {
+		font-size: 1.2em;
+		margin-left: 7px;
+	}
+	&:hover {
+		color: #222;
+		background: #fafafa;
+		border: 1px solid #999;
+	}
+}
+.btn-g.icon {
+	padding: 1px 2px;
+	color: #646464;
+	background: #eee;
+}
+.btn-g.big {
+	@include header-g;
+	font-size: 20px;
+	padding: 12px 40px;
+	display: flex;
+	justify-content: center;
+}
+.btn-g.faded {
+	color: #646464;
+	border: 1px solid #ddd;
+	&:hover {
+		color: #444;
+		border: 1px solid #aaa;
+	}
+}
+.btn-g:hover {
+	color: $btnHoverColor;
+	background: #f7f7f7;
+}
+.btn-g.clear {
+	color: $fadedColor;
+	border: none;
+	background: none;
+	margin: 0px;
+	padding: 0px;
+	&:hover {
+		color: $mainColor;
+	}
+}
+.btn-g.primary {
+	background: $mainColor;
+	border-color: $mainColor;
+	&:hover {
+		background: $mainColor_dark;
+		border-color: $mainColor_dark;
+	}
+	color: white;
+}
+.btn-g.danger {
+	background: $dangerBtnColor;
+	border-color: $dangerBtnColor;
+	&:hover {
+		background: $dangerBtnColor_dark;
+		border-color: $dangerBtnColor_dark;
+	}
+	color: white;
+}
+.btn-g {
+	&:disabled {
+		cursor: default;
+		background: #f5f5f5;
+		border: 1px solid #ddd;
+		color: #aaa;
+		&:hover {
+			color: #aaa;
+			background: #f5f5f5;
+			border: 1px solid #ddd;
+		}
+	}
+	&.clear:disabled {
+		background: none;
+		border: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.react-datepicker-popper {
+	z-index: 10;
+}

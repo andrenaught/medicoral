@@ -1,0 +1,25 @@
+{
+  "name": "medicoral",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devserver": "cd backend && pipenv run python manage.py runserver",
+    "client": "cd frontend && npm run start",
+    "softdev": "concurrently \"npm run devserver -- --noreload\" \"npm run client\"",
+    "dev": "concurrently \"npm run devserver\" \"npm run client\"",
+    "lint": "cd frontend && npm run lint",
+    "clientbuild": "cd frontend && npm run build",
+    "staticbuild": "cd backend && pipenv run python manage.py collectstatic",
+    "build": "npm run clientbuild && npm run staticbuild",
+    "checklist": "cd backend && pipenv run python manage.py check --deploy",
+    "server": "cd backend && pipenv run daphne backend.asgi:application",
+    "start": "npm run checklist && npm run server --"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.1.0"
+  }
+}

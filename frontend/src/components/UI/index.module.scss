@@ -1,0 +1,93 @@
+@import '../../styles/_variables.scss';
+
+.ui-modal {
+	visibility: hidden; /* Hidden by default */
+	opacity: 0;
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	top: 0;
+	left: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto;
+}
+
+.ui-modal .modal-content-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.ui-modal .modal-content-container-inner {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.ui-modal .modal-outer {
+	margin: 0 auto;
+	max-width: 100%;
+	position: relative;
+	padding: 10px;
+
+	.close-btn {
+		display: flex;
+		background: none;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		width: 25px;
+		height: 25px;
+		.icon {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			padding: 3px 3px 0px 0px;
+			display: flex;
+			font-size: 20px;
+			color: #aaa;
+		}
+		&:hover {
+			.icon {
+				color: #000;
+			}
+		}
+	}
+
+	.modal-content {
+		width: auto;
+		box-sizing: border-box;
+		max-width: 100%;
+		max-height: 100%;
+		padding: 25px;
+		box-shadow: $boxShadow;
+		border-radius: 5px;
+		background: #fff;
+	}
+	.modal-content::-webkit-scrollbar {
+		display: none; // hide scrollbar
+	}
+}
+
+.ui-modal.modal-open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.ui-modal-filter {
+	visibility: hidden; /* Hidden by default */
+	opacity: 0;
+	position: fixed;
+	z-index: 50; /* Sit on top */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000 0% 0%;
+	// backdrop-filter: blur(25px); // frosted blur, turning this off - i think this was causing some random flickering bug (triggers more when scrolling i think), also makes it was laggier
+
+	&.modal-open {
+		opacity: 0.68;
+		visibility: visible;
+	}
+}

@@ -1,0 +1,23 @@
+@import '../../styles/_variables';
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	grid-template-columns: 4fr 2fr;
+	grid-gap: 10px;
+	width: $containerWidthMed;
+	max-width: 100%;
+
+	> * {
+		overflow: auto;
+	}
+
+	@media screen and (max-width: $mediaBreak1) {
+		display: flex;
+		flex-direction: column-reverse;
+		grid-gap: 0px;
+		> *:first-child {
+			margin-top: 10px;
+		}
+	}
+}

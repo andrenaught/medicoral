@@ -1,0 +1,97 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"prettier",
+		"plugin:import/typescript"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": ["react", "@typescript-eslint", "prettier"],
+	"settings": {},
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": ["error"],
+		"react/jsx-filename-extension": [
+			1,
+			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+		],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "never",
+				"jsx": "never",
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"react/jsx-props-no-spreading": 0,
+		"import/prefer-default-export": 0,
+		"jsx-a11y/label-has-associated-control": ["error", { "assert": "either" }],
+		"no-alert": "off",
+		"no-console": ["warn", { "allow": ["warn", "error"] }],
+		"arrow-body-style": "off",
+		"no-unused-vars": "off",
+		"camelcase": "off",
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "default",
+				"format": ["camelCase", "PascalCase"],
+				"leadingUnderscore": "allow",
+				"trailingUnderscore": "allow"
+			},
+
+			{
+				"selector": "variable",
+				"format": ["camelCase", "UPPER_CASE", "PascalCase"],
+				"leadingUnderscore": "allow",
+				"trailingUnderscore": "allow"
+			},
+	    {
+	      "selector": "variable",
+	      "modifiers": ["destructured"],
+	      "format": null
+	    },
+			{
+				"selector": "typeLike",
+				"format": ["PascalCase"]
+			},
+			{
+				"selector": ["typeProperty", "objectLiteralProperty"],
+				"format": ["camelCase", "snake_case", "PascalCase"]
+			}
+		],
+		// Dev
+		// temp: https://github.com/facebook/create-react-app/issues/10021
+		"@typescript-eslint/no-unused-vars": "warn",
+		"prefer-const": "warn",
+		"spaced-comment": "warn",
+		"no-lone-blocks": "warn",
+		"no-nested-ternary": "warn",
+		"no-useless-return": "warn",
+		"no-unreachable": "warn"
+	},
+	// Typescript already handles no-undef in it's own way: https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"no-undef": "off"
+			}
+		}
+	]
+}

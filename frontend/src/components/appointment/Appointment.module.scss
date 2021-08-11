@@ -1,0 +1,92 @@
+@import '../../styles/_variables';
+
+.container {
+	width: $containerWidthMed;
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr auto;
+	grid-gap: 10px;
+	> * {
+		height: min-content;
+	}
+	@media screen and (max-width: $mediaBreak1) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.main {
+	.section1 {
+		margin-bottom: 25px;
+		font-size: 13px;
+	}
+	.section2 {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+}
+
+.statusTag {
+	font-weight: bold;
+	font-size: 11px;
+	display: inline-flex;
+	border-radius: 6px;
+	align-items: center;
+	background: #e7e7e7;
+	color: #484848;
+	padding: 4px 8px;
+	margin-right: 8px;
+	transition-duration: 0.1s;
+
+	.indicator {
+		border-radius: 100%;
+		height: 10px;
+		width: 10px;
+		margin-right: 6px;
+	}
+	.text {
+		line-height: 1em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+.time {
+	display: flex;
+	align-items: center;
+	.timeIcon {
+		display: flex;
+		margin: 0px 2px 0px 3px;
+		color: $fadedColor;
+	}
+}
+
+.patientHeader {
+	display: flex;
+
+	.tag {
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		font-size: 11px;
+		margin: 0px 6px;
+		height: 100%;
+		background: #e7e7e7;
+		color: #484848;
+		border-radius: 5px;
+		padding: 4px;
+	}
+}
+
+.notes {
+	word-break: break-word;
+	white-space: pre-wrap;
+	color: $fadedColor;
+}

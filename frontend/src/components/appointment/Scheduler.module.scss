@@ -1,0 +1,143 @@
+@import '../../styles/_variables';
+
+.container {
+	margin: 20px 0px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+
+	.headerLeft {
+		display: flex;
+		align-items: flex-end;
+		.headerLabel {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.headerRight {
+		display: flex;
+	}
+
+	.viewOptions {
+		display: flex;
+		align-items: flex-end;
+		margin-right: 30px;
+		position: relative;
+
+		.options {
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			.btn:not(:last-child) {
+				margin-right: 10px;
+			}
+			.btn {
+				color: $inactiveColor;
+			}
+			.btn:hover {
+				color: $textColor;
+			}
+			.btn.active {
+				color: $textColor;
+			}
+		}
+
+		.line {
+			transition: left 0.4s;
+			border-radius: 10px;
+			width: 2px;
+			height: 12px;
+			background: $textColor;
+			position: absolute;
+			top: 40px;
+			left: 23px;
+		}
+	}
+
+	.timelineStatus {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-right: 30px;
+		> .top {
+			color: $labelColor;
+			font-size: $fontSmall;
+		}
+		> .bottom {
+			display: flex;
+			font-size: 18px;
+		}
+		.days {
+			display: flex;
+			justify-content: flex-end;
+			width: 55px;
+		}
+	}
+
+	.calendarBtn {
+		align-self: flex-start;
+		margin-right: 4px;
+	}
+
+	.calendarInputCont {
+		height: 0;
+		width: 110px;
+		margin-right: 5px;
+		.calendarInput {
+			padding-top: 9px;
+			padding-bottom: 9px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.twinBtns {
+		.btn {
+			height: 100%;
+		}
+		.btn:first-child {
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+			border-right: 0px;
+			&:hover {
+				+ .btn {
+					border-left: 1px solid $btnHoverBorderColor;
+				}
+			}
+		}
+		.btn:last-child {
+			border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+		}
+	}
+
+	@media screen and (max-width: $mediaBreak1) {
+		flex-direction: column;
+		.headerLeft {
+			margin-bottom: 10px;
+		}
+		.headerRight {
+			justify-content: space-between;
+		}
+		.viewOptions {
+			margin-right: 0px;
+		}
+		.timelineStatus {
+			margin-right: 0px;
+		}
+		.calendarBtn {
+			display: none;
+		}
+	}
+}
+
+.main {
+}
+
+.footer {
+	margin: 5px 0px;
+}

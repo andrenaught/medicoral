@@ -1,0 +1,149 @@
+// Generally non-functional or non-interactive parts of the UI
+.content-section-g {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	> * {
+		max-width: 100%;
+	}
+
+	&.screen-centered {
+		min-height: calc(100vh - 40px);
+
+		@media screen and (min-height: 1000px) {
+			min-height: 0;
+			height: 1000px;
+		}
+		@media screen and (max-width: $mediaBreak1) {
+			min-height: calc(100vh - 20px); // lining up with app-body
+		}
+	}
+}
+
+.flex-g {
+	display: flex;
+	align-items: center;
+}
+
+.one-row-g {
+	display: flex;
+	align-items: center;
+	> * {
+		margin-right: 10px;
+	}
+	> *:last-child {
+		margin-right: 0px;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+	overflow-x: scroll;
+}
+
+td,
+th {
+	text-align: left;
+	padding: 15px 5px;
+	&.word-break {
+		word-break: break-word;
+	}
+}
+td.td-w-inner-g {
+	padding: 0px;
+	> * {
+		padding: 15px 5px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+td.td-nowrap {
+	white-space: nowrap;
+}
+
+tr {
+	border-bottom: 1px solid #ddd;
+}
+tbody tr {
+	vertical-align: baseline;
+	&:last-child {
+		border-bottom: 0px;
+	}
+	&:hover {
+		background: #fafafa;
+	}
+	&.clickable {
+		cursor: pointer;
+		td:first-child {
+			color: $linkColor;
+		}
+		&:hover {
+			td:first-child {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.box-g {
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.separator-g {
+	margin: 15px 0px;
+	border-top: 1px solid #eee;
+	&.hidden {
+		opacity: 0;
+	}
+}
+
+.label-g {
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	font-weight: bold;
+	margin-bottom: 1px;
+}
+
+.info-section-g {
+	margin-bottom: 15px;
+
+	> .info-item {
+		margin-bottom: 2px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
+.show-newlines-g {
+	white-space: pre-wrap;
+}
+
+.tag-g {
+	font-weight: bold;
+	font-size: 11px;
+	display: inline-flex;
+	border-radius: 6px;
+	align-items: center;
+	background: #e7e7e7;
+	color: #484848;
+	padding: 4px 8px;
+	margin-right: 8px;
+	transition-duration: 0.1s;
+}
