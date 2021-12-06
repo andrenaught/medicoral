@@ -4,6 +4,8 @@
 
 Electronic medical records (EMR) system. Schedule appointments and keep track of patient records.
 
+[Demo](https://mdcor.andretn.com/) - u: testuser p: superdog
+
 ## Setup
 
 1. `npm install`
